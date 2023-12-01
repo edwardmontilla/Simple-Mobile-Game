@@ -32,7 +32,7 @@ container: {
     flexDirection: 'column', 
     justifyContent: 'flex-start', 
     alignItems: 'center', 
-    backgroundColor: '#63c5da',
+    backgroundColor: 'lightblue',
     paddingVertical: 20, 
     paddingHorizontal: 10, 
 },

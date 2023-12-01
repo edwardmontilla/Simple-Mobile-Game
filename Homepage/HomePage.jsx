@@ -12,9 +12,9 @@ const HomePage = () => {
     navigation.navigate('StartLearning');
   };
 
-  const handleTestYourself = () => {
+  const handleLevelSelection = () => {
     // Navigate to TestYourself component
-    console.log('Test Yourself');
+    navigation.navigate('LevelSelection');
   };
 
   const handleAboutUs = () => {
@@ -42,7 +42,7 @@ const HomePage = () => {
       <TouchableOpacity style={styles.button} onPress={handleStartLearning}>
         <Text style={styles.buttonText}>🚀 Start Learning </Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.button} onPress={handleTestYourself}>
+      <TouchableOpacity style={styles.button} onPress={handleLevelSelection}>
         <Text style={styles.buttonText}>🎓 Test Yourself</Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.button} onPress={handleAboutUs}>
@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
     flexDirection: 'column', 
     justifyContent: 'flex-start', 
     alignItems: 'center', 
-    backgroundColor: '#63c5da',
+    backgroundColor: 'lightblue',
     paddingVertical: 20, 
     paddingHorizontal: 10, 
   },
