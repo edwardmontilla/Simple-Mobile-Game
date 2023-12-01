@@ -24,7 +24,7 @@ const HomePage = () => {
 
   const handleSettings = () => {
     // Handle navigation to the settings screen or any other logic
-    console.log('Settings');  
+    navigation.navigate('Settings');  
   };
 
   return (

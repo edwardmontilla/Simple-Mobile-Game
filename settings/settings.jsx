@@ -1,13 +1,17 @@
 import React, { useState } from 'react';
 import { View, Text, Switch, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
-const SettingsPage = () => {
+const Settings = () => {
+  const navigation = useNavigation();
+  
+
   const [name, setName] = useState('');
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [darkMode, setDarkMode] = useState(false);
   const [dailyGoal, setDailyGoal] = useState(0);
-
+  
   const handleSaveSettings = () => {
     // Add logic to save settings to your app's storage or backend
     console.log('Settings saved:', { name, username, email, darkMode, dailyGoal });
@@ -136,4 +140,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default SettingsPage;
+export default Settings;
