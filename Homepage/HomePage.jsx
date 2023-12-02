@@ -67,18 +67,15 @@ const styles = StyleSheet.create({
 
   image: {
     marginTop:-20,
-    width: 350,
+    width: 400,
     height: 300,
     resizeMode: 'cover',
     borderRadius: 15,
   },
 
   imageContainer: {
-    marginTop: -30,
     marginBottom: 20,
-    paddingBottom: 5,
   },
-  
 
   subHeading: {
     fontFamily: 'roboto',
@@ -102,7 +99,7 @@ const styles = StyleSheet.create({
   },
 
   button: {
-    backgroundColor: '#fdcc04',
+    backgroundColor: '#fddb53',
     padding: 10,
     borderRadius: 15,
     marginTop: 10,
