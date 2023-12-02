@@ -5,7 +5,6 @@ import { useNavigation } from '@react-navigation/native';
 const Settings = () => {
   const navigation = useNavigation();
   
-
   const [name, setName] = useState('');
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
@@ -14,8 +13,9 @@ const Settings = () => {
   
   const handleSaveSettings = () => {
     // Add logic to save settings to your app's storage or backend
-    console.log('Settings saved:', { name, username, email, darkMode, dailyGoal });
+    navigation.navigate('SaveSettings', { name, username, email, darkMode, dailyGoal });
   };
+
 
   return (
     <View style={styles.container}>
@@ -69,7 +69,7 @@ const Settings = () => {
           />
         </View>
 
-        <TouchableOpacity onPress={handleSaveSettings} style={styles.saveButton}>
+         <TouchableOpacity onPress={handleSaveSettings} style={styles.saveButton}>
           <Text style={styles.saveButtonText}>Save Settings</Text>
         </TouchableOpacity>
       </View>
