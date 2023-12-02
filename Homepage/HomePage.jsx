@@ -66,8 +66,7 @@ const styles = StyleSheet.create({
   },
 
   image: {
-    marginTop: 35,
-    width: 350,
+    width: 400,
     height: 300,
     resizeMode: 'cover',
     borderRadius: 15,
