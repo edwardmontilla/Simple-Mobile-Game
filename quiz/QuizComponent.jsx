@@ -278,7 +278,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     width: '95%',
     textAlign: 'center',
-    marginTop: 40,
+    marginTop: 15,
     backgroundColor: 'white',
     marginBottom: 40,
     borderRadius: 20,
@@ -315,7 +315,7 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     textAlign: 'center',
     alignItems: 'center',
-    leftMargin: 10,
+    marginLeft: 34,
     width: '80%',
   },
   correctMarker: {
