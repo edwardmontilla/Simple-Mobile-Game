@@ -7,6 +7,8 @@ import AboutUs from './Homepage/AboutUs';
 import LevelSelection from './Level/LevelSelection';
 import Settings from './Settings/Settings';
 import SaveSettings from './Settings/SaveSettings';
+import QuizComponent from './Quiz/QuizComponent';
+
 
 const Stack = createNativeStackNavigator();
 
@@ -18,6 +20,7 @@ const App = () => {
         <Stack.Screen name="StartLearning" component={StartLearning} />
         <Stack.Screen name="AboutUs" component={AboutUs} />
         <Stack.Screen name="LevelSelection" component={LevelSelection} />
+        <Stack.Screen name="QuizComponent" component={QuizComponent} />
         <Stack.Screen name="Settings" component={Settings} />
         <Stack.Screen name="SaveSettings" component={SaveSettings} />
       </Stack.Navigator>
