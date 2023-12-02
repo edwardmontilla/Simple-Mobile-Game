@@ -75,8 +75,8 @@ const styles = StyleSheet.create({
     marginTop: -20,
     marginBottom: 20,
     paddingBottom: 5,
-
   },
+  
 
   subHeading: {
     fontFamily: 'roboto',
@@ -100,7 +100,7 @@ const styles = StyleSheet.create({
   },
 
   button: {
-    backgroundColor: '#fddb53',
+    backgroundColor: '#fdcc04',
     padding: 10,
     borderRadius: 15,
     marginTop: 10,
