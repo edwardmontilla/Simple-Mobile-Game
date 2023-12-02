@@ -2,8 +2,8 @@
 
 import React from 'react';
 import { View } from 'react-native';
-import QuizComponent from  './quiz/quiz-component'; // Adjust the path accordingly
-import questions from './quiz/questions.json'; // Adjust the path accordingly
+import QuizComponent from  './quiz-component'; // Adjust the path accordingly
+import questions from './questions.json'; // Adjust the path accordingly
 const QAPage = () => {
   // Replace this with your actual JSON data
   const ques = questions;
