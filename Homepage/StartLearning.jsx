@@ -1,19 +1,21 @@
 import React from 'react';
 import { View, Text, Button, Image, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { useDarkMode } from '../DarkModeContext';
 
 const StartLearningScreen = () => {
   const navigation = useNavigation();
+  const { darkMode, toggleDarkMode } = useDarkMode();
 
   const handleGoBack = () => {
     navigation.goBack(); // or use navigation.navigate('YourPreviousScreen')
   };
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container,{backgroundColor: darkMode ? 'black' : '#77cff1'}]}>
       <View style={styles.header}>
-        <Text style={styles.headerText}>Welcome to the Learning Hub</Text>
-        <Text style={styles.subHeaderText}>
+        <Text style={[styles.headerText,{color: darkMode ? 'white' : 'black'}]}>Welcome to the Learning Hub</Text>
+        <Text style={[styles.subHeaderText,{color: darkMode ? 'white' : 'black'}]}>
           Expand your knowledge and enhance your coding skills.
         </Text>
       </View>
@@ -24,15 +26,15 @@ const StartLearningScreen = () => {
           source={{ uri: 'https://cdn4.iconfinder.com/data/icons/education-759/2050/Education_flat-29-1024.png' }}
           style={styles.image}
         />
-        <Text style={styles.paragraph}>
+        <Text style={[styles.paragraph,{color: darkMode ? 'white' : 'black',}]}>
           Whether you are a beginner or an experienced developer, continuous learning is crucial in the dynamic field of coding.
         </Text>
 
-        <Text style={styles.paragraph}>
+        <Text style={[styles.paragraph,{color: darkMode ? 'white' : 'black',}]}>
           Start by mastering fundamental concepts like variables, loops, and conditionals. Progress to advanced topics such as data structures, algorithms, and design patterns.
         </Text>
 
-        <Text style={styles.paragraph}>
+        <Text style={[styles.paragraph,{color: darkMode ? 'white' : 'black',}]}>
           Stay updated with the latest technologies and frameworks to stay competitive in the ever-evolving world of software development.
         </Text>
 

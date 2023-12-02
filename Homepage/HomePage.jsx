@@ -1,10 +1,11 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-
+import { useDarkMode } from '../DarkModeContext';
 
 
 const HomePage = () => {
+  const { darkMode, toggleDarkMode } = useDarkMode();
   const navigation = useNavigation();
 
   const handleStartLearning = () => {
@@ -28,7 +29,7 @@ const HomePage = () => {
   };
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container,{backgroundColor: darkMode ? 'black' : '#77cff1'}]}>
       <Text style={styles.welcomeText}> CODINGGO </Text>
       <View style={styles.imageContainer}>
       <Image
@@ -51,7 +52,6 @@ const HomePage = () => {
       <TouchableOpacity style={styles.button} onPress={handleSettings}>
         <Text style={styles.buttonText}>⚙️ Settings</Text>
       </TouchableOpacity>
-
     </View>
   );
 };
@@ -62,7 +62,6 @@ const styles = StyleSheet.create({
     flexDirection: 'column', 
     justifyContent: 'flex-start', 
     alignItems: 'center', 
-    backgroundColor: 'lightblue',
     paddingVertical: 20, 
     paddingHorizontal: 10, 
   },

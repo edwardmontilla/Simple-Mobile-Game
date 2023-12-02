@@ -9,7 +9,13 @@ import {
   Alert,
 } from 'react-native';
 
+import { useDarkMode } from '../DarkModeContext';
+
+
 function QuizComponent({ questions }) {
+    // useDarkMode hook
+    const { darkMode, toggleDarkMode } = useDarkMode();
+    
 
     // state variables
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -186,8 +192,8 @@ function QuizComponent({ questions }) {
     
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.header}>Level 1</Text>
+    <View style={[styles.container, {backgroundColor: darkMode? 'black':'#77cff1',}]}>
+      <Text style={[styles.header, {color:darkMode? 'white':'black',}]}>Level 1</Text>
 
       {/* Display question and choices*/}
       <View style={styles.questionChoices}>
@@ -257,7 +263,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     padding: 16,
-    backgroundColor: '#77cff1',
   },
   
   header: {

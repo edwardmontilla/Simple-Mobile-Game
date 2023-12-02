@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, Switch, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { useDarkMode } from '../DarkModeContext';
 
 const Settings = () => {
   const navigation = useNavigation();
@@ -8,7 +9,8 @@ const Settings = () => {
   const [name, setName] = useState('');
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
-  const [darkMode, setDarkMode] = useState(false);
+  //const [darkMode, setDarkMode] = useState(false);
+  const { darkMode, toggleDarkMode } = useDarkMode();
   const [dailyGoal, setDailyGoal] = useState(0);
   
   const handleSaveSettings = () => {
@@ -18,8 +20,8 @@ const Settings = () => {
 
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.header}>Settings</Text>
+    <View style={[styles.container,{backgroundColor: darkMode ? 'black' : '#77cff1'}]}>
+      <Text style={[styles.header,{color: darkMode ? 'white' : 'black',}]}>Settings</Text>
 
       <View style={styles.mainContainer}>
 
@@ -55,7 +57,7 @@ const Settings = () => {
 
         <View style={styles.switchContainer}>
           <Text style={styles.label}>Dark Mode</Text>
-          <Switch value={darkMode} onValueChange={setDarkMode} />
+          <Switch value={darkMode} onValueChange={toggleDarkMode} />
         </View>
 
         <View style={styles.inputContainer}>
@@ -79,15 +81,13 @@ const Settings = () => {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'lightblue',
     alignItems: 'center',
     padding: 5,
   },
   header: {
     fontSize: 50,
     marginTop: 8,
-    fontWeight: 'bold',
-    //color: darkMode ? 'black' : 'white',
+    fontWeight: 'bold'
   },
   mainContainer: {
     backgroundColor: 'white',
