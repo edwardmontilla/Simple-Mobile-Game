@@ -66,20 +66,15 @@ const styles = StyleSheet.create({
   },
 
   image: {
-    width: 400,
+    marginTop:-20,
+    width: 350,
     height: 300,
     resizeMode: 'cover',
-    borderRadius: 10,
-    borderWidth: 2,
-    borderColor: 'yellow',
-    margin: 10,
+    borderRadius: 15,
   },
 
   imageContainer: {
-    marginTop: -20,
     marginBottom: 20,
-    paddingBottom: 5,
-
   },
 
   subHeading: {
