@@ -12,17 +12,18 @@ const SaveSettings = () => {
 
     return (
         <View style={styles.container}>
-            <Image
-                source={{ uri:'https://static.vecteezy.com/system/resources/previews/000/496/056/original/vector-settings-icon-design.jpg' }}
-                style={styles.image}
-            />
+
             <Text style={styles.subheading}>
-                The changes has been successfully saved!
+                The changes has been successfully saved! 
             </Text>
 
             <View>
-            <Button title=" Go Back" onPress={handleSaveSettings} />
+            <Image
+                source={{ uri:'https://freepngimg.com/thumb/facebook/65435-thumb-icons-button-up-computer-facebook-thumbs.png' }}
+                style={styles.image}
+            />
             </View>
+
         </View>
     );
 };
@@ -34,8 +35,8 @@ container: {
     justifyContent: 'flex-start', 
     alignItems: 'center', 
     backgroundColor: 'lightblue',
-    paddingVertical: 20, 
-    paddingHorizontal: 10, 
+    paddingVertical: 50, 
+    paddingHorizontal: 50, 
 },
 
   subheading: {
@@ -44,8 +45,8 @@ container: {
     marginTop: 5,
     marginLeft: 5,
     marginRight: 5,
-    textAlign: 'left',
-    color: 'black',
+    textAlign: 'center',
+    color: '#666',
 },
 
   button: {
@@ -59,9 +60,10 @@ container: {
 },
 
   image: {
-    width: 100,
-    height: 100,
+    width: 200,
+    height: 200,
     resizeMode: 'contain',
+    alignItems: 'center',
 },
 });
 

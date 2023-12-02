@@ -21,7 +21,7 @@ const AboutUs = () => {
             <Text style={styles.subText}>
                 For support, contact us at support@codinggo.com
             </Text>
-            <Button title=" ⬅️ Back" onPress={handleGoBack} style={styles.button} />
+            <Button title=" ⬅️ Back" onPress={handleGoBack} />
         </View>
     );
 };
@@ -55,17 +55,6 @@ container: {
     textAlign: 'center',
     fontStyle: 'italic',
 },
-
-  button: {
-    padding: 10,
-    borderRadius: 15,
-    marginTop: 10,
-    marginBottom: 10,
-    width: 50,
-    textAlign: 'center',
-    
-},
-
   image: {
     width: 380,
     height: 380,
