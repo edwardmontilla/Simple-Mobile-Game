@@ -30,7 +30,10 @@ const LevelSelection = () => {
                 level > 1 && styles.locked,
               ]}
               disabled={level === 1 ? false : true}
-              onPress={() => navigation.navigate('QAPage')}
+              onPress={() => {
+                console.log('pressed level: ', level);
+                navigation.navigate('QAPage');
+              }}
             >
               <Text style={styles.levelText}>{level}</Text>
             </TouchableOpacity>
