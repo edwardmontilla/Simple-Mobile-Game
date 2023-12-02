@@ -70,6 +70,10 @@ const styles = StyleSheet.create({
     width: 400,
     height: 300,
     resizeMode: 'cover',
+    borderRadius: 10,
+    borderWidth: 2,
+    borderColor: 'yellow',
+    margin: 10,
   },
 
   imageContainer: {
