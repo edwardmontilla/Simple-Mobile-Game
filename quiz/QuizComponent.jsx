@@ -300,7 +300,6 @@ const styles = StyleSheet.create({
     marginTop: 20,
     backgroundColor: 'white',
     marginBottom: 10,
-    borderColor: 'black',
   },
   choiceList:{
     marginTop: 10,
@@ -348,6 +347,8 @@ const styles = StyleSheet.create({
     alignContent: 'center',
     alignItems: 'center',
     width: '30%',
+    borderColor: 'gray',
+    borderWidth: 1,
   },
   buttonText: {
     fontSize: 16,
