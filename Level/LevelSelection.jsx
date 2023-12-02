@@ -7,8 +7,18 @@ import {
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
+
 const LevelSelection = () => {
     const navigation = useNavigation();
+
+    const handleLevelPress = (level) => {
+      // Check if the clicked level is 1
+      if (level === 1) {
+        
+        navigation.navigate('QAPage');
+      }
+      
+    };
   return (
 
     <View style={styles.container}>
@@ -30,10 +40,7 @@ const LevelSelection = () => {
                 level > 1 && styles.locked,
               ]}
               disabled={level === 1 ? false : true}
-              onPress={() => {
-                console.log('pressed level: ', level);
-                navigation.navigate('QAPage');
-              }}
+              onPress={() => handleLevelPress(level)}
             >
               <Text style={styles.levelText}>{level}</Text>
             </TouchableOpacity>
