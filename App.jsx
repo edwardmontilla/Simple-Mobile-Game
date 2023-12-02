@@ -5,7 +5,8 @@ import HomePage from './Homepage/HomePage';
 import StartLearning from './Homepage/StartLearning';
 import AboutUs from './Homepage/AboutUs';
 import LevelSelection from './Level/LevelSelection';
-import Settings from './Settings/Settings';
+import QAPage from './quiz/QAPage';
+import Settings from './settings/Settings';
 
 const Stack = createNativeStackNavigator();
 
