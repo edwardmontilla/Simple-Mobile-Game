@@ -76,6 +76,8 @@ const styles = StyleSheet.create({
   imageContainer: {
     marginTop: -20,
     marginBottom: 20,
+    paddingBottom: 5,
+
   },
 
   subHeading: {
