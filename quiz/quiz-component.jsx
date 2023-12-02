@@ -75,6 +75,12 @@ function QuizComponent({ questions }) {
 
       // Set answered to true after the user selects an answer
       setAnswered(true);
+
+      //update score immediately after the user selects an answer
+      const isCorrect = choice === questions[currentQuestionIndex].correctAnswer;
+      if (isCorrect) {
+        setScore((prevScore) => prevScore + 1);
+      }
   };
 
     // use useEffect to update the state of answered
@@ -160,7 +166,6 @@ function QuizComponent({ questions }) {
     // render the score
     const renderScore = () => {
       if (submitted) {
-        const score = calculateScore();
         return (
           <View style={styles.scoreContainer}>
             <Text style={styles.scoreText}>Your Score: {score}/{questions.length}</Text>
@@ -170,16 +175,6 @@ function QuizComponent({ questions }) {
       return null;
     };
 
-    // calculate the score
-    const calculateScore = () => {
-      let score = 0;
-      for (let i = 0; i < questions.length; i++) {
-        if (userSelectedChoices[i] === questions[i].correctAnswer) {
-          score++;
-        }
-      }
-      return score;
-    };
 
     // event handler for the Submit button
     const handleSubmitPress = () => {
