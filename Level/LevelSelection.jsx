@@ -14,11 +14,10 @@ const LevelSelection = () => {
     const handleLevelPress = (level) => {
       // Check if the clicked level is 1
       if (level === 1) {
-        
         navigation.navigate('QAPage');
       }
-      
     };
+    // will add more levels later
   return (
 
     <View style={styles.container}>
