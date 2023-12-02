@@ -230,7 +230,7 @@ function QuizComponent({ questions }) {
               <Text style={styles.buttonText}>Previous</Text>
             </TouchableOpacity>
           ) : (
-            <View style={[styles.navButton, {backgroundColor:'transparent'}]}/>
+            <View style={[styles.navButton, {backgroundColor:'transparent', borderWidth:0}]}/>
           )
         }
         
