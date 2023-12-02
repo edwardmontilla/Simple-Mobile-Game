@@ -17,7 +17,9 @@ const App = () => {
     
     <DarkModeProvider>
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="Home">
+        <Stack.Navigator initialRouteName="Home"
+        // screenOptions={{ headerShown: false }} this is to get rid of the header stacks
+        >
           <Stack.Screen name="🏠" component={HomePage} />
           <Stack.Screen name="StartLearning" component={StartLearning} />
           <Stack.Screen name="AboutUs" component={AboutUs} />
