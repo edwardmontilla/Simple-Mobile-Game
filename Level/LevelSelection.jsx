@@ -15,7 +15,7 @@ const LevelSelection = () => {
       // Check if the clicked level is 1
       if (level === 1) {
         
-        navigation.navigate('QAPage');
+        navigation.navigate('QAPage'); // Navigate to the QAPage screen 
       }
       
     };

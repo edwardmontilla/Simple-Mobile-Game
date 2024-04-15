@@ -12,7 +12,7 @@ const StartLearningScreen = () => {
   return (
     <View>
       {/* Your screen content here */}
-      <Button title=" ⬅️ Back" onPress={handleGoBack} style={styles.button} />
+      <Button title=" ⬅️ Back" onPress={handleGoBack} />
     </View>
   );
 };
