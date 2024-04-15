@@ -9,7 +9,13 @@ import {
   Alert,
 } from 'react-native';
 
+import { useDarkMode } from '../DarkModeContext';
+
+
 function QuizComponent({ questions }) {
+    // useDarkMode hook
+    const { darkMode, toggleDarkMode } = useDarkMode();
+    
 
     // state variables
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -75,6 +81,12 @@ function QuizComponent({ questions }) {
 
       // Set answered to true after the user selects an answer
       setAnswered(true);
+
+      //update score immediately after the user selects an answer
+      const isCorrect = choice === questions[currentQuestionIndex].correctAnswer;
+      if (isCorrect) {
+        setScore((prevScore) => prevScore + 1);
+      }
   };
 
     // use useEffect to update the state of answered
@@ -160,7 +172,6 @@ function QuizComponent({ questions }) {
     // render the score
     const renderScore = () => {
       if (submitted) {
-        const score = calculateScore();
         return (
           <View style={styles.scoreContainer}>
             <Text style={styles.scoreText}>Your Score: {score}/{questions.length}</Text>
@@ -170,16 +181,6 @@ function QuizComponent({ questions }) {
       return null;
     };
 
-    // calculate the score
-    const calculateScore = () => {
-      let score = 0;
-      for (let i = 0; i < questions.length; i++) {
-        if (userSelectedChoices[i] === questions[i].correctAnswer) {
-          score++;
-        }
-      }
-      return score;
-    };
 
     // event handler for the Submit button
     const handleSubmitPress = () => {
@@ -191,8 +192,8 @@ function QuizComponent({ questions }) {
     
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.header}>Level 1</Text>
+    <View style={[styles.container, {backgroundColor: darkMode? 'black':'#77cff1',}]}>
+      <Text style={[styles.header, {color:darkMode? 'white':'black',}]}>Level 1</Text>
 
       {/* Display question and choices*/}
       <View style={styles.questionChoices}>
@@ -229,7 +230,7 @@ function QuizComponent({ questions }) {
               <Text style={styles.buttonText}>Previous</Text>
             </TouchableOpacity>
           ) : (
-            <View style={[styles.navButton, {backgroundColor:'transparent'}]}/>
+            <View style={[styles.navButton, {backgroundColor:'transparent', borderWidth:0}]}/>
           )
         }
         
@@ -262,7 +263,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     padding: 16,
-    backgroundColor: '#77cff1',
   },
   
   header: {
@@ -278,7 +278,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     width: '95%',
     textAlign: 'center',
-    marginTop: 40,
+    marginTop: 10,
     backgroundColor: 'white',
     marginBottom: 40,
     borderRadius: 20,
@@ -300,7 +300,6 @@ const styles = StyleSheet.create({
     marginTop: 20,
     backgroundColor: 'white',
     marginBottom: 10,
-    borderColor: 'black',
   },
   choiceList:{
     marginTop: 10,
@@ -315,7 +314,7 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     textAlign: 'center',
     alignItems: 'center',
-    leftMargin: 10,
+    marginLeft: 34,
     width: '80%',
   },
   correctMarker: {
@@ -348,6 +347,8 @@ const styles = StyleSheet.create({
     alignContent: 'center',
     alignItems: 'center',
     width: '30%',
+    borderColor: 'gray',
+    borderWidth: 1,
   },
   buttonText: {
     fontSize: 16,
