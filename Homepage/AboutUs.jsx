@@ -1,27 +1,29 @@
 import React from 'react';
 import { View, Text, Button, Image, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { useDarkMode } from '../DarkModeContext';
 
 const AboutUs = () => {
     const navigation = useNavigation();
+    const { darkMode, toggleDarkMode } = useDarkMode();
 
     const handleGoBack = () => {
         navigation.goBack();
     };
 
     return (
-        <View style={styles.container}>
+        <View style={[styles.container,{backgroundColor: darkMode ? 'black' : '#77cff1'}]}>
             <Image
                 source={{ uri:'https://www.projectmediaworks.com/wp-content/uploads/2017/06/about-us-icon.jpg' }}
                 style={styles.image}
             />
-            <Text style={styles.subheading}>
+            <Text style={[styles.subheading,{color: darkMode ? 'white' : 'black',}]}>
                 Codinggo, your premier destination for coding excellence, brings you a dynamic quiz app designed to elevate your programming skills. Dive into a world where each question is a stepping stone toward mastery, where challenges meet knowledge, and where your coding journey is finely tuned. With Codinggo, embark on a quest for skill refinement, where every quiz question propels you closer to coding expertise.
             </Text>
             <Text style={styles.subText}>
                 For support, contact us at support@codinggo.com
             </Text>
-            <Button title=" ⬅️ Back" onPress={handleGoBack} style={styles.button} />
+            <Button title=" ⬅️ Back" onPress={handleGoBack} />
         </View>
     );
 };
@@ -32,7 +34,6 @@ container: {
     flexDirection: 'column', 
     justifyContent: 'flex-start', 
     alignItems: 'center', 
-    backgroundColor: 'lightblue',
     paddingVertical: 20, 
     paddingHorizontal: 10, 
 },
@@ -44,7 +45,6 @@ container: {
     marginLeft: 5,
     marginRight: 5,
     textAlign: 'left',
-    color: 'black',
 },
   subText: {
     fontSize: 16,
@@ -55,17 +55,6 @@ container: {
     textAlign: 'center',
     fontStyle: 'italic',
 },
-
-  button: {
-    padding: 10,
-    borderRadius: 15,
-    marginTop: 10,
-    marginBottom: 10,
-    width: 50,
-    textAlign: 'center',
-    
-},
-
   image: {
     width: 380,
     height: 380,

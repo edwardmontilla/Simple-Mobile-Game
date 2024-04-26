@@ -6,22 +6,22 @@ import {
     TouchableOpacity
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { useDarkMode } from '../DarkModeContext';
 
 
 const LevelSelection = () => {
     const navigation = useNavigation();
+    const { darkMode, toggleDarkMode } = useDarkMode();
 
     const handleLevelPress = (level) => {
       // Check if the clicked level is 1
       if (level === 1) {
-        
-        navigation.navigate('QAPage'); // Navigate to the QAPage screen 
+        navigation.navigate('QAPage');
       }
-      
     };
+    // will add more levels later
   return (
-
-    <View style={styles.container}>
+    <View style={[styles.container,{backgroundColor: darkMode ? 'black' : '#77cff1'}]}>
       <View style={styles.header}>
         <View style={styles.headerBackground} />
         <Text style={styles.logo}>codinggo</Text>
@@ -29,7 +29,7 @@ const LevelSelection = () => {
       <View style={styles.content}>
       </View>
 
-      <View style={styles.section}>
+      <View style={[styles.section,{backgroundColor: darkMode ? 'black' : '#77cff1'}]}>
         <View style={styles.flexContainer}>
           {[1, 2, 3, 4, 5].map((level) => (
             <TouchableOpacity
@@ -55,7 +55,6 @@ const LevelSelection = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#77cff1',
   },
 
   // header, used z-index to make sure the header is on top of the content
@@ -95,7 +94,6 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#77cff1',
   },
 
   flexContainer: {
