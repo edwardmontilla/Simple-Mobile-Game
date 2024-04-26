@@ -1,5 +1,3 @@
-
-
 import React from 'react';
 import { View } from 'react-native';
 import QuizComponent from  './QuizComponent'; // Adjust the path accordingly

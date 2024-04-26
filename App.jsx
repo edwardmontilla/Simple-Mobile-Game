@@ -5,9 +5,9 @@ import HomePage from './Homepage/HomePage';
 import StartLearning from './Homepage/StartLearning';
 import AboutUs from './Homepage/AboutUs';
 import LevelSelection from './Level/LevelSelection';
-import Settings from './Settings/Settings';
-import SaveSettings from './Settings/SaveSettings';
-import QAPage from './Quiz/QAPage';
+import Settings from './settings/settings';
+import SaveSettings from './settings/SaveSettings';
+import QAPage from './quiz/qa-page';
 import { DarkModeProvider } from './DarkModeContext';
 
 const Stack = createNativeStackNavigator();
