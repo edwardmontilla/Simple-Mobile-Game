@@ -1,27 +1,25 @@
 import React, { useState } from 'react';
 import { View, Text, Switch, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { useDarkMode } from '../DarkModeContext';
 
 const Settings = () => {
   const navigation = useNavigation();
   
+
   const [name, setName] = useState('');
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
-  //const [darkMode, setDarkMode] = useState(false);
-  const { darkMode, toggleDarkMode } = useDarkMode();
+  const [darkMode, setDarkMode] = useState(false);
   const [dailyGoal, setDailyGoal] = useState(0);
   
   const handleSaveSettings = () => {
     // Add logic to save settings to your app's storage or backend
-    navigation.navigate('SaveSettings', { name, username, email, darkMode, dailyGoal });
+    console.log('Settings saved:', { name, username, email, darkMode, dailyGoal });
   };
 
-
   return (
-    <View style={[styles.container,{backgroundColor: darkMode ? 'black' : '#77cff1'}]}>
-      <Text style={[styles.header,{color: darkMode ? 'white' : 'black',}]}>Settings</Text>
+    <View style={styles.container}>
+      <Text style={styles.header}>Settings</Text>
 
       <View style={styles.mainContainer}>
 
@@ -57,7 +55,7 @@ const Settings = () => {
 
         <View style={styles.switchContainer}>
           <Text style={styles.label}>Dark Mode</Text>
-          <Switch value={darkMode} onValueChange={toggleDarkMode} />
+          <Switch value={darkMode} onValueChange={setDarkMode} />
         </View>
 
         <View style={styles.inputContainer}>
@@ -71,7 +69,7 @@ const Settings = () => {
           />
         </View>
 
-         <TouchableOpacity onPress={handleSaveSettings} style={styles.saveButton}>
+        <TouchableOpacity onPress={handleSaveSettings} style={styles.saveButton}>
           <Text style={styles.saveButtonText}>Save Settings</Text>
         </TouchableOpacity>
       </View>
@@ -81,13 +79,15 @@ const Settings = () => {
 
 const styles = StyleSheet.create({
   container: {
+    backgroundColor: 'lightblue',
     alignItems: 'center',
     padding: 5,
   },
   header: {
     fontSize: 50,
     marginTop: 8,
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    //color: darkMode ? 'black' : 'white',
   },
   mainContainer: {
     backgroundColor: 'white',
